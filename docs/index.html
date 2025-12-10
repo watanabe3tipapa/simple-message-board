@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>伝言板（デモ・localStorage）</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1>伝言板（デモ）</h1>
+
+            <form id="postForm" class="card" autocomplete="off">
+                <label
+                    ><span class="label">名前（任意）</span>
+                    <input
+                        id="author"
+                        type="text"
+                        maxlength="50"
+                        placeholder="名無し"
+                    />
+                </label>
+
+                <label
+                    ><span class="label">本文</span>
+                    <textarea
+                        id="content"
+                        rows="4"
+                        maxlength="1000"
+                        required
+                        placeholder="ここに書いてください"
+                    ></textarea>
+                </label>
+
+                <div class="row">
+                    <button id="submitBtn" type="submit">投稿する</button>
+                    <button id="clearBtn" type="button" class="secondary">
+                        クリア
+                    </button>
+                    <button id="exportBtn" type="button" class="secondary">
+                        エクスポート
+                    </button>
+                </div>
+
+                <p class="note">
+                    このページはデモ用です。投稿はこのブラウザの localStorage
+                    にのみ保存され、別端末や別ブラウザでは見えません。
+                </p>
+            </form>
+
+            <section class="card" id="messagesSection">
+                <h2>投稿一覧</h2>
+                <div id="messages">読み込み中…</div>
+                <div id="controls" style="margin-top: 10px">
+                    <button id="clearAll" class="secondary">
+                        全投稿を削除
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
